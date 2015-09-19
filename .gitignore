@@ -1,0 +1,7 @@
+### General
+
+# Contains lecture documents of my modules
+*/docs
+
+# Vagrant
+.vagrant
