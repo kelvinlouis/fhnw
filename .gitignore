@@ -3,5 +3,9 @@
 # Contains lecture documents of my modules
 */docs
 
+# Java
+bin/
+*.class
+
 # Vagrant
 .vagrant
