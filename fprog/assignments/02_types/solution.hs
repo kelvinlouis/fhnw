@@ -72,7 +72,7 @@ f3 x = (x, 1)
 -- 4d
 -- f4 :: a -> b
 -- Doesn't work, because Haskell is a purely typed language
--- This definition is too vaguely typed, for just receiving one param.
+-- This definition is too vague for just receiving one param.
 
 -- 4e
 f5 :: a -> (a -> b) -> b
