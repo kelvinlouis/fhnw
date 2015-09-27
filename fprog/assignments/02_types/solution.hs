@@ -34,12 +34,18 @@ calc Sub x y = x - y
 -- 2b
 data Menu = BigMac | CheeseRoyal
 data Size = Small | Large
-type Order = (Menu,Size)
+type Order = (Menu, Size)
+
+basePrice :: Menu -> Int
+basePrice BigMac = 10
+basePrice CheeseRoyal = 11
+
+sizeAdd :: Size -> Int
+sizeAdd Small = 0
+sizeAdd Large = 2
 
 price :: Order -> Int
-price (m, Large) = price (m, Small) + 2 
-price (BigMac, Small) = 10
-price (CheeseRoyal, Small) = 11
+price (menu, size) = basePrice menu + sizeAdd size 
 
 -- 3a
 swap :: (a,b) -> (b,a)
@@ -68,7 +74,7 @@ f1 x = x
 
 -- 4b
 f2 :: (Int, Bool) -> Int
-f2 (x,b) = x
+f2 (x,_) = x
 
 -- 4c
 f3 :: a -> (a,Int)
@@ -76,8 +82,8 @@ f3 x = (x, 1)
 
 -- 4d
 -- f4 :: a -> b
--- Doesn't work, because Haskell is a purely typed language
--- This definition is too vague for just receiving one param.
+-- Doesn't work, because in Haskell functions are pure, which means 'b' needs
+-- to be passed to the function, otherwise the function isn't aware of 'b'.
 
 -- 4e
 f5 :: a -> (a -> b) -> b
