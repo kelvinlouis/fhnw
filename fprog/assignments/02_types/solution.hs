@@ -2,14 +2,19 @@
 threeEquals :: Int -> Int -> Int -> Bool
 threeEquals x y z = x == y && y == z
 
--- alternative?
+-- alternative
+threeEquals' x y z = all (==x) [x,y,z] 
 
 -- 1b
 fourEquals1 :: Int -> Int -> Int -> Int -> Bool
-fourEquals1 a b c d = a == b && b == c && c == d
+fourEquals1 w x y z = w == x && x == y && y == z
+
+-- alternative
+fourEquals1' :: Int -> Int -> Int -> Int -> Bool
+fourEquals1' w x y z  = all (==w) [w, x, y, z]
 
 fourEquals2 :: Int -> Int -> Int -> Int -> Bool
-fourEquals2 a b c d = ( threeEquals a b c ) && c == d
+fourEquals2 w x y z = ( threeEquals w x y ) && y == z
 
 -- 1c
 averageThree :: Int -> Int -> Int -> Double
