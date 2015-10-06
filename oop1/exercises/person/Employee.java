@@ -17,4 +17,8 @@ class Employee extends Person {
         System.out.println("Thanks buddy!");
     }
 
+    public int getWage() {
+    	return wage;
+    }
+
 }
