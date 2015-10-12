@@ -1,13 +1,16 @@
--- 1a. render (lambda `beside` ( lambda `beside` lambda ))
+-- 1a. 
+render (lambda `beside` ( lambda `beside` lambda ))
 
--- 1b. render ((lambda `beside` (invert lambda)) `above` (invert lambda `beside` lambda ) )
+-- 1b. 
+render ((lambda `beside` (invert lambda)) `above` (invert lambda `beside` lambda ) )
 
--- 1c. render (invert (flipV (flipH lambda)))
+-- 1c. 
+render (invert (flipV (flipH lambda)))
 
 -- 2.
--- rotate180 :: Picture -> Picture
--- rotate180 img = flipV ( flipH img )
--- call: render (rotate180 lambda)
+rotate180 :: Picture -> Picture
+rotate180 img = flipV ( flipH img )
+render (rotate180 lambda)
 
 -- 3a. square (times2 3)
 -- ~> square (2 * 3)    -- using t2
