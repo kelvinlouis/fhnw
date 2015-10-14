@@ -48,7 +48,7 @@ public class Assignment5 {
         int pos = 0,
             min = list[0];
 
-        for (int i = 1; i < list.length; i++) {
+        for (int i = 1; i <= list.length; i++) {
             if (list[i] < min){
                 min = list[i];
                 pos = i;
