@@ -49,7 +49,7 @@ public class Assignment5 {
             min = list[0];
 
         for (int i = 1; i < list.length; i++) {
-            if (list[i] < min){
+            if (list[i] <= min){
                 min = list[i];
                 pos = i;
             }
