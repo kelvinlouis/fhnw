@@ -27,10 +27,12 @@
 
 -- 1b.1
 -- 1 + 2 ^ 3 == 6 && 3 / 4 < 12 || snd (1,True)
+-- ((1 + (2 ^ 3) == 6) && ((3 / 4) < 12)) || (snd (1,True)) (RICHTIG)
 -- (1 + (2 ^ 3) == 6) && ((3 / 4) < 12) || snd (1,True)
 
 -- 1b.2
 -- (3:) [] == map (*5)[2 ^ 4 ^ 6]
+-- (3:) ([] == map) (*5)[(2 ^ (4 ^ 6))] (RICHTIG)
 -- (3:) [] == map (*5)[(2 ^ (4 ^ 6))]
 
 
@@ -43,14 +45,16 @@ add' (a,b) = a + b
 
 -- 2a
 curry' :: ((a,b) -> c) -> a -> b -> c
-curry' fn x y = fn (x,y)
+curry' fn = \x y -> fn (x,y)
+-- curry' fn x y = fn (x,y)
 
 addWith1 :: Int -> Int
 addWith1 = curry' add' 1
 
 -- 2b
 uncurry' :: (a -> b -> c) -> (a,b) -> c
-uncurry' fn (x,y) = fn x y
+uncurry' fn = \(x,y) -> fn x y
+--uncurry' fn (x,y) = fn x y
 
 addWith1' :: Int -> Int
 addWith1' = \x -> uncurry' add (x,1)
