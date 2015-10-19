@@ -1,20 +1,17 @@
 -- 1) rewrite the function compare
 -- 1a) use if-then-else
 compareWithIf :: (Ord a) => a -> a -> Ordering
-compareWithIf a b = 
-  if a > b
-  then GT
-  else
-    if a < b
-    then LT
-    else EQ
+compareWithIf a b = if a > b
+                      then GT
+                      else if a < b
+                        then LT
+                        else EQ
 
 -- 1b) use guards
 compareWithGuards :: (Ord a) => a -> a -> Ordering
-compareWithGuards a b
-  | a > b = GT
-  | a < b = LT
-  | otherwise = EQ
+compareWithGuards a b | a > b = GT
+                      | a < b = LT
+                      | otherwise = EQ
 
 -- 1c) use cases
 compareWithCases :: (Ord a) => a -> a -> Ordering
