@@ -1,0 +1,3 @@
+[submodule "chp/assignments/3_2"]
+	path = chp/assignments/3_2
+	url = git@github.com:GOATALU/4bit-alu.git
