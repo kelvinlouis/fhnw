@@ -2,13 +2,16 @@
 
 -- 1
 max' :: (Ord a) => a -> a -> a
-max' x y  | x >= y = x
+max' x y  | x > y = x
           | otherwise = y
 
 -- 1a
 maxl :: (Ord a) => [a] -> a
 maxl [x] = x
 maxl x = max' (head x) (maxl (tail x))
+
+-- tail rekursiv...wahrscheinlich performanter
+-- maxl (x:y:ys) = maxl (max' x y : ys)
 
 -- or...
 maxl' :: (Ord a) => [a] -> a
