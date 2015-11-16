@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="4-Bit Memory"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="4-Bit Memory">
+    <a name="circuit" val="4-Bit Memory"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="76">Q3</text>
+      <polyline fill="none" points="234,152 230,157" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="210" y="186">R</text>
+      <polyline fill="none" points="234,152 234,166" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="256" y="165">CP</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="256" y="95">D2</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="256" y="75">D3</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="170" y="186">S</text>
+      <polyline fill="none" points="274,104 261,110" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="165">Q0</text>
+      <polyline fill="none" points="274,64 261,70" stroke="#000000"/>
+      <polyline fill="none" points="274,165 261,159" stroke="#000000"/>
+      <polyline fill="none" points="273,96 260,90" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="256" y="115">D1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="120" y="186">En</text>
+      <polyline fill="none" points="274,116 261,110" stroke="#000000"/>
+      <polyline fill="none" points="274,124 261,130" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="163" y="125">MEM</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="176">~Q0</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="136">Q1</text>
+      <polyline fill="none" points="273,84 260,90" stroke="#000000"/>
+      <rect fill="none" height="140" stroke="#000000" stroke-width="2" width="190" x="70" y="50"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="106">Q2</text>
+      <polyline fill="none" points="274,76 261,70" stroke="#000000"/>
+      <polyline fill="none" points="234,152 238,157" stroke="#000000"/>
+      <polyline fill="none" points="274,153 261,159" stroke="#000000"/>
+      <polyline fill="none" points="274,136 261,130" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="146">~Q1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="86">~Q3</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="74" y="116">~Q2</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="256" y="135">D0</text>
+      <circ-port height="8" pin="60,100" width="8" x="116" y="186"/>
+      <circ-port height="8" pin="150,100" width="8" x="166" y="186"/>
+      <circ-port height="8" pin="240,100" width="8" x="206" y="186"/>
+      <circ-port height="8" pin="330,100" width="8" x="256" y="156"/>
+      <circ-port height="8" pin="90,220" width="8" x="256" y="66"/>
+      <circ-port height="10" pin="240,220" width="10" x="65" y="65"/>
+      <circ-port height="10" pin="240,260" width="10" x="65" y="75"/>
+      <circ-port height="8" pin="90,350" width="8" x="256" y="86"/>
+      <circ-port height="10" pin="240,350" width="10" x="65" y="95"/>
+      <circ-port height="10" pin="240,390" width="10" x="65" y="105"/>
+      <circ-port height="8" pin="90,480" width="8" x="256" y="106"/>
+      <circ-port height="10" pin="240,480" width="10" x="65" y="125"/>
+      <circ-port height="10" pin="240,520" width="10" x="65" y="135"/>
+      <circ-port height="8" pin="90,610" width="8" x="256" y="126"/>
+      <circ-port height="10" pin="240,610" width="10" x="65" y="155"/>
+      <circ-port height="10" pin="240,650" width="10" x="65" y="165"/>
+      <circ-anchor facing="east" height="6" width="6" x="67" y="67"/>
+    </appear>
+    <wire from="(150,670)" to="(150,680)"/>
+    <wire from="(150,410)" to="(150,420)"/>
+    <wire from="(170,410)" to="(170,420)"/>
+    <wire from="(170,670)" to="(170,680)"/>
+    <wire from="(240,100)" to="(240,110)"/>
+    <wire from="(190,410)" to="(190,420)"/>
+    <wire from="(190,670)" to="(190,680)"/>
+    <wire from="(60,100)" to="(60,110)"/>
+    <wire from="(150,130)" to="(150,150)"/>
+    <wire from="(170,130)" to="(170,150)"/>
+    <wire from="(90,480)" to="(130,480)"/>
+    <wire from="(90,220)" to="(130,220)"/>
+    <wire from="(210,390)" to="(240,390)"/>
+    <wire from="(210,610)" to="(240,610)"/>
+    <wire from="(210,650)" to="(240,650)"/>
+    <wire from="(210,350)" to="(240,350)"/>
+    <wire from="(220,110)" to="(240,110)"/>
+    <wire from="(120,500)" to="(130,500)"/>
+    <wire from="(120,240)" to="(130,240)"/>
+    <wire from="(150,540)" to="(150,550)"/>
+    <wire from="(170,540)" to="(170,550)"/>
+    <wire from="(170,280)" to="(170,290)"/>
+    <wire from="(150,280)" to="(150,290)"/>
+    <wire from="(150,100)" to="(150,110)"/>
+    <wire from="(190,280)" to="(190,290)"/>
+    <wire from="(190,540)" to="(190,550)"/>
+    <wire from="(330,100)" to="(330,110)"/>
+    <wire from="(260,130)" to="(260,150)"/>
+    <wire from="(240,130)" to="(240,150)"/>
+    <wire from="(90,610)" to="(130,610)"/>
+    <wire from="(90,350)" to="(130,350)"/>
+    <wire from="(210,220)" to="(240,220)"/>
+    <wire from="(210,260)" to="(240,260)"/>
+    <wire from="(210,480)" to="(240,480)"/>
+    <wire from="(210,520)" to="(240,520)"/>
+    <wire from="(130,110)" to="(150,110)"/>
+    <wire from="(120,630)" to="(130,630)"/>
+    <wire from="(120,370)" to="(130,370)"/>
+    <comp lib="0" loc="(140,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S3"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(170,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(190,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp loc="(130,200)" name="rising edge D-FF"/>
+    <comp lib="0" loc="(240,260)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q3"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(170,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(90,610)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(190,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp loc="(130,330)" name="rising edge D-FF"/>
+    <comp lib="0" loc="(150,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(90,350)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D2"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(60,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="En"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(130,110)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(260,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,290)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,350)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q2"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(150,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(90,480)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D1"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp loc="(130,590)" name="rising edge D-FF"/>
+    <comp lib="0" loc="(230,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R3"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(60,110)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+    </comp>
+    <comp loc="(130,460)" name="rising edge D-FF"/>
+    <comp lib="0" loc="(170,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(160,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(120,630)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(170,290)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S3"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="R"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(250,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(120,500)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(190,290)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R3"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,680)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(190,680)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(90,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D3"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(120,240)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,480)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q1"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(220,110)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(240,610)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q0"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(170,680)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q3"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,520)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q1"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(150,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(330,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CP"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(330,110)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="CP"/>
+    </comp>
+    <comp lib="0" loc="(240,650)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q0"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,390)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q2"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(120,370)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+  </circuit>
+  <circuit name="3-Bit Memory">
+    <a name="circuit" val="3-Bit Memory"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="246" y="85">D2</text>
+      <polyline fill="none" points="263,86 250,80" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="246" y="155">CP</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="64" y="156">~Q0</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="64" y="96">~Q2</text>
+      <polyline fill="none" points="224,142 220,147" stroke="#000000"/>
+      <polyline fill="none" points="264,106 251,100" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="246" y="125">D0</text>
+      <polyline fill="none" points="264,143 251,149" stroke="#000000"/>
+      <polyline fill="none" points="263,74 250,80" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="110" y="176">En</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="153" y="125">MEM</text>
+      <polyline fill="none" points="224,142 228,147" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="160" y="176">S</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="200" y="176">R</text>
+      <polyline fill="none" points="264,155 251,149" stroke="#000000"/>
+      <polyline fill="none" points="264,114 251,120" stroke="#000000"/>
+      <polyline fill="none" points="264,126 251,120" stroke="#000000"/>
+      <polyline fill="none" points="264,94 251,100" stroke="#000000"/>
+      <polyline fill="none" points="224,142 224,156" stroke="#000000"/>
+      <rect fill="none" height="120" stroke="#000000" stroke-width="2" width="190" x="60" y="60"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="64" y="116">Q1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="end" x="246" y="105">D1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="64" y="145">Q0</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="64" y="126">~Q1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="64" y="86">Q2</text>
+      <circ-port height="8" pin="60,100" width="8" x="106" y="176"/>
+      <circ-port height="8" pin="150,100" width="8" x="156" y="176"/>
+      <circ-port height="8" pin="240,100" width="8" x="196" y="176"/>
+      <circ-port height="8" pin="330,100" width="8" x="246" y="146"/>
+      <circ-port height="8" pin="90,220" width="8" x="246" y="76"/>
+      <circ-port height="10" pin="240,220" width="10" x="55" y="75"/>
+      <circ-port height="10" pin="240,260" width="10" x="55" y="85"/>
+      <circ-port height="8" pin="90,350" width="8" x="246" y="96"/>
+      <circ-port height="10" pin="240,350" width="10" x="55" y="105"/>
+      <circ-port height="10" pin="240,390" width="10" x="55" y="115"/>
+      <circ-port height="8" pin="90,480" width="8" x="246" y="116"/>
+      <circ-port height="10" pin="240,480" width="10" x="55" y="135"/>
+      <circ-port height="10" pin="240,520" width="10" x="55" y="145"/>
+      <circ-anchor facing="east" height="6" width="6" x="57" y="77"/>
+    </appear>
+    <wire from="(170,410)" to="(170,420)"/>
+    <wire from="(150,410)" to="(150,420)"/>
+    <wire from="(240,100)" to="(240,110)"/>
+    <wire from="(190,410)" to="(190,420)"/>
+    <wire from="(60,100)" to="(60,110)"/>
+    <wire from="(170,130)" to="(170,150)"/>
+    <wire from="(150,130)" to="(150,150)"/>
+    <wire from="(90,220)" to="(130,220)"/>
+    <wire from="(90,480)" to="(130,480)"/>
+    <wire from="(210,350)" to="(240,350)"/>
+    <wire from="(210,390)" to="(240,390)"/>
+    <wire from="(120,500)" to="(130,500)"/>
+    <wire from="(230,110)" to="(240,110)"/>
+    <wire from="(120,240)" to="(130,240)"/>
+    <wire from="(150,100)" to="(150,110)"/>
+    <wire from="(150,540)" to="(150,550)"/>
+    <wire from="(170,280)" to="(170,290)"/>
+    <wire from="(150,280)" to="(150,290)"/>
+    <wire from="(170,540)" to="(170,550)"/>
+    <wire from="(190,540)" to="(190,550)"/>
+    <wire from="(190,280)" to="(190,290)"/>
+    <wire from="(330,100)" to="(330,110)"/>
+    <wire from="(240,130)" to="(240,150)"/>
+    <wire from="(260,130)" to="(260,150)"/>
+    <wire from="(90,350)" to="(130,350)"/>
+    <wire from="(210,260)" to="(240,260)"/>
+    <wire from="(210,220)" to="(240,220)"/>
+    <wire from="(210,480)" to="(240,480)"/>
+    <wire from="(210,520)" to="(240,520)"/>
+    <wire from="(120,370)" to="(130,370)"/>
+    <wire from="(140,110)" to="(150,110)"/>
+    <comp lib="0" loc="(260,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(120,370)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(190,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(90,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D2"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(250,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(90,480)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(190,290)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,350)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q1"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(230,110)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+    </comp>
+    <comp lib="0" loc="(160,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="3"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,260)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q2"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,480)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q0"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(330,110)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="CP"/>
+    </comp>
+    <comp lib="0" loc="(170,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(120,500)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,390)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q1"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q2"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="3"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="R"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(150,290)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(190,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(140,110)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+    </comp>
+    <comp lib="0" loc="(330,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CP"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(120,240)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CP"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(150,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(60,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="En"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(240,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(170,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S1"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(170,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S0"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(240,520)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q0"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(60,110)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="En"/>
+    </comp>
+    <comp lib="0" loc="(170,290)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="S2"/>
+      <a name="labelfont" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="0" loc="(90,350)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D1"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+  </circuit>
+  <circuit name="rising edge D-FF">
+    <a name="circuit" val="rising edge D-FF"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="west"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="80" stroke="#000000" stroke-width="2" width="80" x="80" y="60"/>
+      <text font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="120" y="79">D-FF</text>
+      <polyline fill="none" points="81,93 99,100" stroke="#000000"/>
+      <polyline fill="none" points="99,100 80,107" stroke="#000000"/>
+      <polyline fill="none" points="110,90 110,110" stroke="#000000"/>
+      <polyline fill="none" points="110,90 105,97" stroke="#000000"/>
+      <polyline fill="none" points="110,90 115,97" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="148" y="84">Q</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="121" y="137">S</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="89" y="84">D</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="101" y="137">En</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="145" y="124">~Q</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="141" y="137">R</text>
+      <circ-port height="10" pin="280,70" width="10" x="155" y="75"/>
+      <circ-port height="8" pin="160,70" width="8" x="76" y="96"/>
+      <circ-port height="8" pin="160,90" width="8" x="76" y="76"/>
+      <circ-port height="8" pin="160,120" width="8" x="116" y="136"/>
+      <circ-port height="8" pin="160,180" width="8" x="136" y="136"/>
+      <circ-port height="8" pin="160,150" width="8" x="96" y="136"/>
+      <circ-port height="10" pin="280,90" width="10" x="155" y="115"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="57"/>
+    </appear>
+    <wire from="(220,100)" to="(220,150)"/>
+    <wire from="(230,100)" to="(230,180)"/>
+    <wire from="(160,150)" to="(220,150)"/>
+    <wire from="(210,100)" to="(210,120)"/>
+    <wire from="(160,180)" to="(230,180)"/>
+    <wire from="(160,90)" to="(200,90)"/>
+    <wire from="(160,70)" to="(200,70)"/>
+    <wire from="(240,90)" to="(280,90)"/>
+    <wire from="(240,70)" to="(280,70)"/>
+    <wire from="(160,120)" to="(210,120)"/>
+    <comp lib="0" loc="(160,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,150)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Enable"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="R"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(280,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="4" loc="(240,70)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(160,120)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,70)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(280,90)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+  </circuit>
+  <circuit name="rising edge D-FF mirrored">
+    <a name="circuit" val="rising edge D-FF mirrored"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <text font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="120" y="79">D-FF</text>
+      <polyline fill="none" points="159,93 140,100" stroke="#000000"/>
+      <polyline fill="none" points="130,90 130,110" stroke="#000000"/>
+      <rect fill="none" height="80" stroke="#000000" stroke-width="2" width="80" x="80" y="60"/>
+      <polyline fill="none" points="130,90 125,97" stroke="#000000"/>
+      <polyline fill="none" points="130,90 135,97" stroke="#000000"/>
+      <polyline fill="none" points="141,100 159,107" stroke="#000000"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="91" y="84">Q</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="121" y="136">S</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="149" y="84">D</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="101" y="136">En</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="93" y="124">~Q</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="141" y="136">R</text>
+      <circ-port height="8" pin="160,70" width="8" x="156" y="96"/>
+      <circ-port height="8" pin="160,90" width="8" x="156" y="76"/>
+      <circ-port height="8" pin="160,120" width="8" x="116" y="136"/>
+      <circ-port height="8" pin="160,150" width="8" x="96" y="136"/>
+      <circ-port height="8" pin="160,180" width="8" x="136" y="136"/>
+      <circ-port height="10" pin="280,70" width="10" x="75" y="75"/>
+      <circ-port height="10" pin="280,90" width="10" x="75" y="115"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="57"/>
+    </appear>
+    <wire from="(220,100)" to="(220,150)"/>
+    <wire from="(230,100)" to="(230,180)"/>
+    <wire from="(160,150)" to="(220,150)"/>
+    <wire from="(210,100)" to="(210,120)"/>
+    <wire from="(160,180)" to="(230,180)"/>
+    <wire from="(160,90)" to="(200,90)"/>
+    <wire from="(160,70)" to="(200,70)"/>
+    <wire from="(240,90)" to="(280,90)"/>
+    <wire from="(240,70)" to="(280,70)"/>
+    <wire from="(160,120)" to="(210,120)"/>
+    <comp lib="0" loc="(280,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Q"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="4" loc="(240,70)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(160,70)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(280,90)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="~Q"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,120)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="R"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="D"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(160,150)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Enable"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+    </comp>
+  </circuit>
+  <circuit name="onPosEdge">
+    <a name="circuit" val="onPosEdge"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <polyline fill="none" points="80,50 80,70" stroke="#000000"/>
+      <polyline fill="none" points="80,50 84,57" stroke="#000000"/>
+      <polyline fill="none" points="80,50 75,57" stroke="#000000"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="57"/>
+    </appear>
+    <comp lib="6" loc="(60,59)" name="Text">
+      <a name="text" val="Positive edge symbol"/>
+      <a name="font" val="SansSerif bold 16"/>
+      <a name="halign" val="left"/>
+    </comp>
+  </circuit>
+  <circuit name="arrow">
+    <a name="circuit" val="arrow"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <polyline fill="none" points="80,90 100,80" stroke="#000000"/>
+      <polyline fill="none" points="80,90 100,100" stroke="#000000"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="87"/>
+    </appear>
+    <comp lib="6" loc="(60,59)" name="Text">
+      <a name="text" val="Arrow"/>
+      <a name="font" val="SansSerif bold 16"/>
+      <a name="halign" val="left"/>
+    </comp>
+  </circuit>
+</project>

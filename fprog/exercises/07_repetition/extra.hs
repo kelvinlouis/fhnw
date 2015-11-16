@@ -25,7 +25,7 @@ f06 :: (a,[a],[[a]]) -> [[a]]
 f06 (x, y, z) = (x : y) : z
 
 -- 1g
---f07 :: (a,[a],[a]) -> [a]
+f07 :: (a,[a],[a]) -> [a]
 f07 (x, [y], z) = x : y : z
 -- important: y is only a element of the list
 
