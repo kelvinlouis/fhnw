@@ -13,6 +13,5 @@ public class GeneralException extends Exception {
     }
 
     public GeneralException(Throwable cause) {
-        super(cause);
     }
 }
