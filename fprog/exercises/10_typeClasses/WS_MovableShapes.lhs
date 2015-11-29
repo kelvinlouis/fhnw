@@ -63,7 +63,7 @@ Implementieren Sie Instanzen für Point, Figure und TextBox.
 >   move v (Line p1 p2) = (Line (move v p1) (move v p2))
 >
 > instance Movable TextBox where
->   move (Vec vx vy) (Text (XY tx ty) soll) = (Text (XY (tx + vx) (ty + vy)) s)
+>   move v (Text p str) = (Text (move v p) str)
 
 Aufgabe 3)
 Implementieren Sie eine Instanz für [a] wobei a der Typklasse Movable 
