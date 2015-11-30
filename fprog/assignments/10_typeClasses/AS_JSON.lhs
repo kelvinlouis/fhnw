@@ -93,22 +93,22 @@ Implementieren Sie Instanzen für String, Bool, Double, Int und Integer:
 Hinweis: Integer und Int können Sie mit der Funktion fromIntegral in ein Double übersezten
 
 > instance ToJSON String where
->   toJSON s = (JStr s)
+>   toJSON s = JStr s
 > instance ToJSON Bool where
->   toJSON b = (JBool b)
+>   toJSON b = JBool b
 > instance ToJSON Int where
->   toJSON i = (JNum (fromIntegral i :: Double))
+>   toJSON i = JNum (fromIntegral i :: Double)
 > instance ToJSON Integer where
->   toJSON i = (JNum (fromIntegral i :: Double))
+>   toJSON i = JNum (fromIntegral i :: Double)
 > instance ToJSON Double where
->   toJSON d = (JNum d)
+>   toJSON d = JNum d
 
 5. Aufgabe
 Implementieren Sie eine Instanz für Listen deren Elemente einen Typ haben
 der zur Klasse ToJSON gehört. Als Resultat soll eine JSeq rauskommen.
 
 > instance (ToJSON a) => ToJSON [a] where
->   toJSON xs = (JSeq (map toJSON xs))
+>   toJSON xs = JSeq (map toJSON xs)
 
 6. Aufgabe
 Gegeben ist der Type Student. Implementieren Sie eine ToJSON Instanz 
@@ -119,7 +119,7 @@ für diesen Typ.
 >                        } deriving Show
 
 > instance ToJSON Student where
->   toJSON (Student email matrikelNr) = (JObj [("email", toJSON email), ("matrikelNr", toJSON matrikelNr)])
+>   toJSON (Student email matrikelNr) = JObj [("email", toJSON email), ("matrikelNr", toJSON matrikelNr)]
 
 Wenn Sie alles richtig gemacht haben, können Sie jetzt eine Liste von Studenten
 nach JSON übersetzen und hübsch als String serialisieren:
