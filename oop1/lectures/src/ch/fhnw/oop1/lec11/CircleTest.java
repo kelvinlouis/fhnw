@@ -9,8 +9,7 @@ public class CircleTest {
 
     @org.junit.Test
     public void testCircumfrence() throws Exception {
-        Circle circle = new Circle();
-        circle.setRadius(4);
+        Circle circle = new Circle(4);
 
         assertEquals(25.13, circle.getCircumfrence(), 0.01);
     }
@@ -24,8 +23,7 @@ public class CircleTest {
 
     @org.junit.Test
     public void testArea() throws Exception {
-        Circle circle = new Circle();
-        circle.setRadius(4);
+        Circle circle = new Circle(4);
 
         assertEquals(50.27, circle.getArea(), 0.01);
     }
@@ -39,7 +37,6 @@ public class CircleTest {
 
     @org.junit.Test(expected = IllegalArgumentException.class)
     public void testSetRadiusNegative() throws Exception {
-        Circle circle = new Circle();
-        circle.setRadius(-1);
+        new Circle(-1);
     }
 }

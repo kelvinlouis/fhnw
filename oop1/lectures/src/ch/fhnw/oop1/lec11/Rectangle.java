@@ -9,6 +9,13 @@ public class Rectangle extends Figure {
     private double height = 0;
     private double width = 0;
 
+    public Rectangle(double height, double width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    public Rectangle() {}
+
     @Override
     public void createInteractively(Scanner scanner) {
         System.out.print("Height: ");

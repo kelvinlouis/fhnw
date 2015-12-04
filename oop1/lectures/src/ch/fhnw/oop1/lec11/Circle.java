@@ -8,6 +8,12 @@ import java.util.Scanner;
 public class Circle extends Figure {
     private double radius = 0;
 
+    public Circle(double radius) {
+        setRadius(radius);
+    }
+
+    public Circle() {}
+
     @Override
     public void createInteractively(Scanner scanner) {
         System.out.print("Radius: ");
