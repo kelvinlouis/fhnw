@@ -11,7 +11,7 @@ public abstract class Figure {
 
     public abstract double getArea();
 
-    public abstract double getCircumfrence();
+    public abstract double getCircumference();
 
     public abstract void createInteractively (Scanner scanner);
 

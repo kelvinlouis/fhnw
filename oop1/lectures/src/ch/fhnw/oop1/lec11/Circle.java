@@ -26,7 +26,7 @@ public class Circle extends Figure {
     }
 
     @Override
-    public double getCircumfrence() {
+    public double getCircumference() {
         return 2 * Math.PI * radius;
     }
 

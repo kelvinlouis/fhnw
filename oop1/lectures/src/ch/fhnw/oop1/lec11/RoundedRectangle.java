@@ -17,7 +17,15 @@ public class RoundedRectangle extends Rectangle {
 
     public RoundedRectangle() {}
 
-    public void setRectangle(double radius) {
+    public double getArea() {
+        return super.getArea();
+    }
+
+    public double getCircumference() {
+        return super.getCircumference();
+    }
+
+    public void setRadius(double radius) {
         this.cornerRadius = radius;
     }
 }

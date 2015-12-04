@@ -11,21 +11,21 @@ public class RectangleTest {
     public void testCircumfrence() throws Exception {
         Rectangle rectangle = new Rectangle(5.75, 15.5);
 
-        assertEquals(42.5, rectangle.getCircumfrence(), 2);
+        assertEquals(42.5, rectangle.getCircumference(), 2);
     }
 
     @org.junit.Test
     public void testCircumfrenceOfSquare() throws Exception {
         Rectangle rectangle = new Rectangle(4, 4);
 
-        assertEquals(16, rectangle.getCircumfrence(), 2);
+        assertEquals(16, rectangle.getCircumference(), 2);
     }
 
     @org.junit.Test()
     public void testCircumfrenceEmpty() throws Exception {
         Rectangle rectangle = new Rectangle();
 
-        assertEquals(0, rectangle.getCircumfrence(), 0);
+        assertEquals(0, rectangle.getCircumference(), 0);
     }
 
     @org.junit.Test

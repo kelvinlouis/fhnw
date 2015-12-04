@@ -11,14 +11,14 @@ public class CircleTest {
     public void testCircumfrence() throws Exception {
         Circle circle = new Circle(4);
 
-        assertEquals(25.13, circle.getCircumfrence(), 0.01);
+        assertEquals(25.13, circle.getCircumference(), 0.01);
     }
 
     @org.junit.Test()
     public void testCircumfrenceEmpty() throws Exception {
         Circle circle = new Circle();
 
-        assertEquals(0, circle.getCircumfrence(), 0);
+        assertEquals(0, circle.getCircumference(), 0);
     }
 
     @org.junit.Test

@@ -11,21 +11,21 @@ public class RoundedRectangleTest {
     public void testCircumfrence() throws Exception {
         RoundedRectangle rectangle = new RoundedRectangle(12.0, 6, 3);
 
-        assertEquals(30.85, rectangle.getCircumfrence(), 0.01);
+        assertEquals(30.85, rectangle.getCircumference(), 0.01);
     }
 
     @org.junit.Test
     public void testCircumfrenceOfSquare() throws Exception {
         RoundedRectangle rectangle = new RoundedRectangle(8.5, 8.5, 4);
 
-        assertEquals(27.13, rectangle.getCircumfrence(), 0.01);
+        assertEquals(27.13, rectangle.getCircumference(), 0.01);
     }
 
     @org.junit.Test()
     public void testCircumfrenceEmpty() throws Exception {
         RoundedRectangle rectangle = new RoundedRectangle();
 
-        assertEquals(0, rectangle.getCircumfrence(), 0);
+        assertEquals(0, rectangle.getCircumference(), 0);
     }
 
     @org.junit.Test

@@ -31,7 +31,7 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public double getCircumfrence() {
+    public double getCircumference() {
         return 2 * (height + width);
     }
 

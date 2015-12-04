@@ -28,7 +28,7 @@ public class Geometry {
 
             // todo: check how to use double in printf
             System.out.printf("Area is: %d %n", (int) fig.getArea());
-            System.out.printf("Circumference is: %d %n", (int) fig.getCircumfrence());
+            System.out.printf("Circumference is: %d %n", (int) fig.getCircumference());
             System.out.println("");
         }
     }
