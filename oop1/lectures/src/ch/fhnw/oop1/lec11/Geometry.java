@@ -11,24 +11,22 @@ public class Geometry {
 
         while (true) {
             Figure fig;
-            String what = "";
+            String type;
 
-            System.out.print("What do you want to create? (Circle, Rectangle, Nothing)\t");
-            what = scanner.next();
+            System.out.print("What do you want to create (Circle, Rectangle, RoundedRectangle, Nothing)?\t");
+            type = scanner.next();
 
-            if (what.equals("Circle")) {
-                fig = new Circle();
-                fig.createInteractively(scanner);
-            } else if (what.equals("Rectangle")) {
-                fig = new Rectangle();
-                fig.createInteractively(scanner);
-            } else {
+            try {
+                fig = FigureFactory.create(type);
+            } catch (IllegalArgumentException err) {
+                // No type found
                 break;
             }
 
-            // todo: check how to use double in printf
-            System.out.printf("Area is: %d %n", (int) fig.getArea());
-            System.out.printf("Circumference is: %d %n", (int) fig.getCircumference());
+            fig.createInteractively(scanner);
+
+            System.out.printf("Area is: %f %n", fig.getArea());
+            System.out.printf("Circumference is: %f %n", fig.getCircumference());
             System.out.println("");
         }
     }

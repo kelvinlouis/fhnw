@@ -1,4 +1,6 @@
-package ch.fhnw.oop1.lec11;
+package ch.fhnw.oop1.lec11.test;
+
+import ch.fhnw.oop1.lec11.Circle;
 
 import static org.junit.Assert.*;
 

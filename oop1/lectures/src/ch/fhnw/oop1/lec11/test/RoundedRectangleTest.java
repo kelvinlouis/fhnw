@@ -1,4 +1,7 @@
-package ch.fhnw.oop1.lec11;
+package ch.fhnw.oop1.lec11.test;
+
+import ch.fhnw.oop1.lec11.Circle;
+import ch.fhnw.oop1.lec11.RoundedRectangle;
 
 import static org.junit.Assert.assertEquals;
 
@@ -76,5 +79,10 @@ public class RoundedRectangleTest {
         RoundedRectangle rectangle = new RoundedRectangle(12, 3, 0);
 
         assertEquals(36, rectangle.getArea(), 0);
+    }
+
+    @org.junit.Test(expected = IllegalArgumentException.class)
+    public void testSetRadiusNegative() throws Exception {
+        new RoundedRectangle(2, 3, -1);
     }
 }

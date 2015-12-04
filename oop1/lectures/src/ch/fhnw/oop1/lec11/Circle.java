@@ -15,12 +15,6 @@ public class Circle extends Figure {
     public Circle() {}
 
     @Override
-    public void createInteractively(Scanner scanner) {
-        System.out.print("Radius: ");
-        radius = scanner.nextDouble();
-    }
-
-    @Override
     public double getArea() {
         return Math.PI * Math.pow(radius, 2);
     }
@@ -30,8 +24,10 @@ public class Circle extends Figure {
         return 2 * Math.PI * radius;
     }
 
-    public double getRadius() {
-        return radius;
+    @Override
+    public void createInteractively(Scanner scanner) {
+        System.out.print("Radius: ");
+        radius = scanner.nextDouble();
     }
 
     public void setRadius(double radius) throws IllegalArgumentException {
@@ -39,5 +35,9 @@ public class Circle extends Figure {
             throw new IllegalArgumentException("Radius has to be at least 0");
         }
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 }
