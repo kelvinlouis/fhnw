@@ -5,6 +5,8 @@ package ch.fhnw.oop1.lec11;
  */
 public class FigureFactory {
 
+    private FigureFactory() {}
+
     /**
      * Simplest factory possible
      * @return Figure
