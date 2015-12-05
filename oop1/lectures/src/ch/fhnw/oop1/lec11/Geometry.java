@@ -13,17 +13,17 @@ public class Geometry {
             Figure fig;
             String type;
 
-            System.out.print("What do you want to create (Circle, Rectangle, RoundedRectangle, Nothing)?\t");
+            System.out.print("What do you want to create (Circle, Rectangle, RoundedRectangle)?\t");
             type = scanner.next();
 
             try {
                 fig = FigureFactory.create(type);
+                fig.createInteractively(scanner);
             } catch (IllegalArgumentException err) {
-                // No type found
+                System.out.println(err.getMessage());
                 break;
             }
 
-            fig.createInteractively(scanner);
 
             System.out.printf("Area is: %f %n", fig.getArea());
             System.out.printf("Circumference is: %f %n", fig.getCircumference());

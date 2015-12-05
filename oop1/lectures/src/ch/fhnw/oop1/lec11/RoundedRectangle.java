@@ -54,7 +54,7 @@ public class RoundedRectangle extends Rectangle {
         super.createInteractively(scanner);
 
         System.out.printf("Radius: ");
-        cornerRadius = scanner.nextDouble();
+        setRadius(scanner.nextDouble());
     }
 
     public void setRadius(double radius) throws IllegalArgumentException {

@@ -29,18 +29,18 @@ public class Rectangle extends Figure {
     @Override
     public void createInteractively(Scanner scanner) {
         System.out.print("Height: ");
-        height = scanner.nextDouble();
+        setHeight(scanner.nextDouble());
 
         System.out.printf("Width: ");
-        width = scanner.nextDouble();
+        setWidth(scanner.nextDouble());
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        this.height = Math.abs(height);
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        this.width = Math.abs(width);
     }
 
     public double getHeight() {

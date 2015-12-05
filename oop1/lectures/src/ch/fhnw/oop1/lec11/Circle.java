@@ -27,7 +27,7 @@ public class Circle extends Figure {
     @Override
     public void createInteractively(Scanner scanner) {
         System.out.print("Radius: ");
-        radius = scanner.nextDouble();
+        setRadius(scanner.nextDouble());
     }
 
     public void setRadius(double radius) throws IllegalArgumentException {
