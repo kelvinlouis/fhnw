@@ -7,7 +7,7 @@ Some Assembler code will come eventually.
 ###fprog ([Link](http://www.fhnw.ch/technik/bachelor/informatik/studium/modulverzeichnis/modul/9114929))
 This module focuses on Haskell.
 ###ip3bb ([Link](http://www.fhnw.ch/technik/bachelor/informatik/studium/modulverzeichnis/modul/9155710))
-This projected is hosted on our private FHNW Git repository
+This project is hosted on our private FHNW Git repository
 ###oop1 ([Link](http://www.fhnw.ch/technik/bachelor/informatik/studium/modulverzeichnis/modul/6007990))
 Java, yikes!
 ###sysad ([Link](http://www.fhnw.ch/technik/bachelor/informatik/studium/modulverzeichnis/modul/6008064))
