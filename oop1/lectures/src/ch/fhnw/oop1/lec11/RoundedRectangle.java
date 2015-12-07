@@ -25,14 +25,14 @@ public class RoundedRectangle extends Rectangle {
      * Created formula by hand and using Papula Formula (Page 32: Circular Sector)
      * 2(rw-2(r^2))+2(hr-2(r^2))+(hw-2rw-2hr+4(r^2))+4((1/2)*(r^2)*φ)
      * hw-4(r^2)+2φ(r^2)
-     * (2(r^2))*(φ-2)+hw
+     * 2*(r^2)*(φ-2)+hw
      */
     public double getArea() {
         double w = width;
         double h = height;
         double r = cornerRadius;
 
-        return 2*(Math.pow(r,2))*(φ-2)+(h*w);
+        return 2*r*r*(φ-2)+(h*w);
     }
 
     /**

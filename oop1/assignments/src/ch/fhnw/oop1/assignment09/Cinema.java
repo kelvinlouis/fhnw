@@ -44,20 +44,21 @@ public class Cinema {
     public void showSeatTable() {
         // Numerate number of seats
         System.out.print("  \t");
+
         for (int i = 0; i < SEATS; i++) {
             System.out.printf(" %d ", i+1);
         }
+
         System.out.println("");
 
         for (int row = 0; row < seats.length; row++) {
             // Numerate each row
             System.out.printf("%d\t", row+1);
 
-            for (int i = 0; i < seats[row].length; i++) {
-                Seat seat = seats[row][i];
-
+            for (Seat seat: seats[row]) {
                 System.out.printf("[%s]", seat.getBooked() ? "X" : " ");
             }
+
             System.out.println("");
         }
     }

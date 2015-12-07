@@ -4,7 +4,7 @@ package ch.fhnw.oop1.assignment09;
  * Created by Kelvin on 22.11.2015.
  */
 public class Seat {
-    private Boolean booked = false;
+    private boolean booked = false;
 
     public void book() throws SeatStateException {
         if (booked) {
