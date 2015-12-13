@@ -1,7 +1,7 @@
 main :: IO ()
 main = do
   cmd <- getLine
-  doCommand cmd
+  doCommand $ words cmd
   main
 
 type Task = (Bool, String)
@@ -10,14 +10,12 @@ type TaskList = [Task]
 filePath :: String
 filePath = "tasks.txt"
 
-doCommand :: String -> IO ()
-doCommand line | cmd == "list" = listTasks
-               | cmd == "add" = addTaskToList argument
-               | cmd == "done" = completeTask (read argument :: Int)
-               | otherwise = putStrLn "incorrect command: list | add description | done task#"
-               where parts = words line
-                     cmd = head parts
-                     argument = (unwords . tail) parts
+doCommand :: [String] -> IO ()
+doCommand (cmd:args)  | cmd == "list" = listTasks
+                      | cmd == "add" = addTaskToList argument
+                      | cmd == "done" = completeTask (read argument :: Int)
+                      | otherwise = putStrLn "incorrect command: list | add description | done task#"
+                      where argument = unwords args
 
 listTasks :: IO ()
 listTasks = do 
