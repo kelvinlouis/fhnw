@@ -23,7 +23,7 @@ askForMovie = do
 
 getMovieInfo :: String -> IO String
 getMovieInfo name = do
-  let url = "http://www.omdbapi.com/?t=" ++ name
+  let url = "http://www.omdbapi.com/?t=" ++ urlEncode name
   response <- (simpleHTTP . getRequest) url
   getResponseBody response
 
