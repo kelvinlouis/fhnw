@@ -12,5 +12,10 @@ ip3bb/
 bin/
 *.class
 
+# Haskell
+*.exe
+*.o
+*.hi
+
 # Vagrant
 .vagrant
