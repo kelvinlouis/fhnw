@@ -1,3 +1,5 @@
+import System.Exit
+
 main :: IO ()
 main = do
   cmd <- getLine
@@ -14,26 +16,30 @@ doCommand :: [String] -> IO ()
 doCommand (cmd:args)  | cmd == "list" = listTasks
                       | cmd == "add" = addTaskToList argument
                       | cmd == "done" = completeTask (read argument :: Int)
+                      | cmd == "remove" = removeTaskFromList (read argument :: Int)
+                      | cmd == "help" = putStrLn "commands: list | add description | done task# | remove task#"
+                      | cmd == "quit" = exitSuccess
                       where argument = unwords args
-
-doCommand _ = putStrLn "incorrect command: list | add description | done task#"
+doCommand _ = return()
 
 listTasks :: IO ()
 listTasks = do 
   list <- readTasks
   putStrLn $ show $ numberTasks list
 
-addTaskToList :: String -> IO ()
-addTaskToList desc = do
+modifyTasks :: (TaskList -> TaskList) -> IO ()
+modifyTasks f = do
   list <- readTasks
-  let newList = addTask desc list
-  writeTasks newList
+  writeTasks $ f list
+
+addTaskToList :: String -> IO ()
+addTaskToList desc = modifyTasks $ addTask desc
 
 completeTask :: Int -> IO ()
-completeTask num = do
-  list <- readTasks
-  let newList = markDone num list
-  writeTasks newList
+completeTask num = modifyTasks $ markDone num
+
+removeTaskFromList :: Int -> IO ()
+removeTaskFromList num = modifyTasks $ removeTask num
 
 readTasks :: IO TaskList
 readTasks = do 
@@ -47,6 +53,9 @@ writeTasks list = writeFile filePath (show list)
 addTask :: String -> TaskList -> TaskList
 addTask "" _ = error "Task has to contain text"
 addTask task list = list ++ [(False, task)]
+
+removeTask :: Int -> TaskList -> TaskList
+removeTask nr tasks = take nr tasks ++ drop (nr+1) tasks 
 
 numberTasks :: TaskList -> [(Int, Task)]
 numberTasks = zip [0..]
