@@ -14,8 +14,9 @@ doCommand :: [String] -> IO ()
 doCommand (cmd:args)  | cmd == "list" = listTasks
                       | cmd == "add" = addTaskToList argument
                       | cmd == "done" = completeTask (read argument :: Int)
-                      | otherwise = putStrLn "incorrect command: list | add description | done task#"
                       where argument = unwords args
+
+doCommand _ = putStrLn "incorrect command: list | add description | done task#"
 
 listTasks :: IO ()
 listTasks = do 
@@ -41,15 +42,15 @@ readTasks = do
   length list `seq` return list 
 
 writeTasks :: TaskList -> IO ()
-writeTasks list = do
-  writeFile filePath (show list)
+writeTasks list = writeFile filePath (show list)
 
 addTask :: String -> TaskList -> TaskList
 addTask "" _ = error "Task has to contain text"
 addTask task list = list ++ [(False, task)]
 
 numberTasks :: TaskList -> [(Int, Task)]
-numberTasks = foldl (\acc l -> acc ++ [(length acc, l)] ) []
+numberTasks = zip [0..]
+--numberTasks = foldl (\acc l -> acc ++ [(length acc, l)] ) []
 
 markDone :: Int -> TaskList -> TaskList
 markDone pos = let mark acc task | num == pos = acc ++ [(True, title)]
