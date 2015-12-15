@@ -20,7 +20,7 @@ public class Seat {
         booked = false;
     }
 
-    public Boolean getBooked() {
+    public boolean getBooked() {
         return booked;
     }
 }
