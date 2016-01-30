@@ -1,8 +1,8 @@
 package ch.fhnw.oop1.lec12.carnivore;
 
 /**
- * Created by Kelvin on 08-Dec-15.
+ * Created by Kelvin on 30-Jan-16.
  */
 public interface Mouser {
-    void catchMouse();
+    public void catchMouse();
 }

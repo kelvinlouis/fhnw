@@ -1,12 +1,9 @@
 package ch.fhnw.oop1.lec12.carnivore;
 
-import ch.fhnw.oop1.lec12.Strokable;
-
 /**
- * Created by Kelvin on 08-Dec-15.
+ * Created by Kelvin on 30-Jan-16.
  */
 public class Cat extends Felid implements Strokable, Mouser {
-
     @Override
     public void stroke() {
         System.out.println("Cat being stroked");
