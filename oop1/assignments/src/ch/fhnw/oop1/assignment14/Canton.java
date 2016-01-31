@@ -4,43 +4,25 @@ package ch.fhnw.oop1.assignment14;
  * Created by Kelvin on 31-Jan-16.
  */
 public enum Canton {
-    BASEL(196_850, 37) {
-        @Override
-        public String toString() {
-            return "Basel";
-        }
-    },
-    GENEVA(482_545, 282) {
-        @Override
-        public String toString() {
-            return "Genf";
-        }
-    },
-    AARGAU(645_277, 1_404) {
-        @Override
-        public String toString() {
-            return "Aargau";
-        }
-    },
-    VAUD(761_446, 3_212) {
-        @Override
-        public String toString() {
-            return "Waadt";
-        }
-    },
-    ZURICH(1_443_436, 1_729) {
-        @Override
-        public String toString() {
-            return "Zürich";
-        }
-    };
+    BASEL("Basel", 196_850, 37),
+    GENEVA("Genf", 482_545, 282),
+    AARGAU("Aargau", 645_277, 1_404),
+    VAUD("Waadt", 761_446, 3_212),
+    ZURICH("Zürich", 1_443_436, 1_729);
 
+    private String locale_de;
     private int population;
     private int area;
 
-    Canton(int p, int a) {
+    Canton(String de, int p, int a) {
+        locale_de = de;
         population = p;
         area = a;
+    }
+
+    @Override
+    public String toString() {
+        return locale_de;
     }
 
     public String info() {
