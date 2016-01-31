@@ -17,38 +17,12 @@ public class Assignment14 {
 
         System.out.println("=============================================");
 
-        Canton[] sortedCantons = sortCantonsDesc(cantons);
+        Canton[] sortedCantons = Canton.sortDesc(cantons);
 
         for (int i = 0; i < sortedCantons.length; i++) {
             Canton canton = sortedCantons[i];
             System.out.printf("%d. %s: %d %n", i+1, canton, canton.getPopulation());
         }
 
-    }
-
-    /**
-     * Lambdas and comparators are not allowed...
-     */
-    public static Canton[] sortCantonsDesc(Canton[] cantons) {
-        Canton[] sortedCantons = new Canton[cantons.length];
-
-        for (int i = 0; i < cantons.length; i++) {
-            Canton c = cantons[i];
-
-            for (int y = 0; y < sortedCantons.length; y++) {
-                Canton sc = sortedCantons[y];
-
-                if (sc == null) {
-                    sortedCantons[y] = c;
-                    break;
-                } else if (c.compareTo(sc) > 0) {
-                    sortedCantons[y] = c;
-                    c = sc;
-                    continue;
-                }
-            }
-        }
-
-        return sortedCantons;
     }
 }

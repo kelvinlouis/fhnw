@@ -54,4 +54,30 @@ public enum Canton {
     public int getArea() {
         return area;
     }
+
+    /**
+     * Lambdas and comparators are not allowed...
+     */
+    public static Canton[] sortDesc(Canton[] cantons) {
+        Canton[] sortedCantons = new Canton[cantons.length];
+
+        for (int i = 0; i < cantons.length; i++) {
+            Canton c = cantons[i];
+
+            for (int y = 0; y < sortedCantons.length; y++) {
+                Canton sc = sortedCantons[y];
+
+                if (sc == null) {
+                    sortedCantons[y] = c;
+                    break;
+                } else if (c.compareTo(sc) > 0) {
+                    sortedCantons[y] = c;
+                    c = sc;
+                    continue;
+                }
+            }
+        }
+
+        return sortedCantons;
+    }
 }
