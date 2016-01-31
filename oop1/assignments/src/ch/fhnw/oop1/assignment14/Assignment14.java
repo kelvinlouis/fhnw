@@ -5,11 +5,12 @@ package ch.fhnw.oop1.assignment14;
  */
 public class Assignment14 {
     public static void main(String[] args) {
-        Canton[] cantons = {Canton.VAUD, Canton.BASEL, Canton.ZURICH, Canton.AARGAU, Canton.GENEVA};
+        Canton[] cantons = {Canton.VD, Canton.BS, Canton.ZH, Canton.AG, Canton.GE};
 
         // To test sorting
-//        Canton[] cantons = {Canton.ZURICH, Canton.VAUD, Canton.AARGAU, Canton.GENEVA, Canton.BASEL};
-//        Canton[] cantons = {Canton.BASEL, Canton.GENEVA, Canton.AARGAU, Canton.VAUD, Canton.ZURICH};
+//        Canton[] cantons = {Canton.ZH, Canton.VD, Canton.AG, Canton.GE, Canton.BS};
+//        Canton[] cantons = {Canton.BS, Canton.GE, Canton.AG, Canton.VD, Canton.ZH};
+//        Canton[] cantons = {Canton.GE, Canton.AG, Canton.ZH, Canton.BS, Canton.VD};
 
         for (Canton c: cantons) {
             System.out.println(c.info());

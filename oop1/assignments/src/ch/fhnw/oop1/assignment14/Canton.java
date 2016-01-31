@@ -4,11 +4,11 @@ package ch.fhnw.oop1.assignment14;
  * Created by Kelvin on 31-Jan-16.
  */
 public enum Canton {
-    BASEL("Basel", 196_850, 37),
-    GENEVA("Genf", 482_545, 282),
-    AARGAU("Aargau", 645_277, 1_404),
-    VAUD("Waadt", 761_446, 3_212),
-    ZURICH("Zürich", 1_443_436, 1_729);
+    BS("Basel", 196_850, 37),
+    GE("Genf", 482_545, 282),
+    AG("Aargau", 645_277, 1_404),
+    VD("Waadt", 761_446, 3_212),
+    ZH("Zürich", 1_443_436, 1_729);
 
     private String locale_de;
     private int population;
@@ -62,4 +62,6 @@ public enum Canton {
 
         return sortedCantons;
     }
+
+
 }
