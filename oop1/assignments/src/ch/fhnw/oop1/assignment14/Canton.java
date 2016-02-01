@@ -10,9 +10,9 @@ public enum Canton {
     VD("Waadt", 761_446, 3_212),
     ZH("Zürich", 1_443_436, 1_729);
 
-    private String locale_de;
-    private int population;
-    private int area;
+    public final String locale_de;
+    public final int population;
+    public final int area;
 
     Canton(String de, int p, int a) {
         locale_de = de;
@@ -62,6 +62,4 @@ public enum Canton {
 
         return sortedCantons;
     }
-
-
 }

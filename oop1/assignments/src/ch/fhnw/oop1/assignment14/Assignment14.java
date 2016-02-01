@@ -1,5 +1,7 @@
 package ch.fhnw.oop1.assignment14;
 
+import java.util.Arrays;
+
 /**
  * Created by Kelvin on 31-Jan-16.
  */
@@ -22,8 +24,7 @@ public class Assignment14 {
 
         for (int i = 0; i < sortedCantons.length; i++) {
             Canton canton = sortedCantons[i];
-            System.out.printf("%d. %s: %d %n", i+1, canton, canton.getPopulation());
+            System.out.printf("%d. %s: %d %n", i+1, canton, canton.population);
         }
-
     }
 }
