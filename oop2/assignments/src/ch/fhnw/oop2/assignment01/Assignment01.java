@@ -29,27 +29,16 @@ public class Assignment01 {
             hashMap.put(person.getEnrolmentNumber(), person);
         }
 
-        System.out.println("ArrayList:");
-        for (Object person: list) {
-            System.out.println(person);
-        }
-        System.out.println("==================================");
+        print("ArrayList", list.iterator());
+        print("HashSet", set.iterator());
+        print("HashMap", hashMap.values().iterator());
+        print("TreeMap", map.values().iterator());
+    }
 
-        System.out.println("HashSet:");
-        for (Person person: set) {
-            System.out.println(person);
-        }
-        System.out.println("==================================");
-
-        System.out.println("TreeMap:");
-        for (Person person: map.values()) {
-            System.out.println(person);
-        }
-        System.out.println("==================================");
-
-        System.out.println("HashMap:");
-        for (Person person: hashMap.values()) {
-            System.out.println(person);
+    public static void print(String name, Iterator it) {
+        System.out.println(name);
+        while (it.hasNext()) {
+            System.out.println(it.next());
         }
         System.out.println("==================================");
     }
