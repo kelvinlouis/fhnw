@@ -5,7 +5,11 @@ package ch.fhnw.algd1.assignment02;
  */
 public class Assignment2 {
     public static void main(String[] args) {
+        //sheet1();
+        sheet2();
+    }
 
+    public static void sheet1() {
         // 1d
         double d = -+-010.d;
         int i = -+-+-+-010;
@@ -39,7 +43,7 @@ public class Assignment2 {
 
         // 2g
         //int x2g = 0xabc / (071 - 57);
-        // division by zeero
+        // division by zero
 
         // 2h
         boolean x2h = -9 % 2 == -3 % -2;
@@ -48,5 +52,41 @@ public class Assignment2 {
         // 2i
         int x = 5;
         System.out.println(++x << x < x || x > x >> x++);
+    }
+
+    public static void sheet2() {
+        // 5a
+        int i1 = 0xFFFFFFB1;
+        System.out.println(Integer.toHexString(i1 >> 4));
+
+        // 5b
+        int i2 = 0x00000068;
+        System.out.println(Integer.toHexString(i2 >> 2));
+
+        // 5c
+        int i3 = 0b00010110;
+        System.out.println(Integer.toHexString(i3 >>> 1));
+
+        // 5d
+        int i4 = 0xffffff90;
+        System.out.println(Integer.toHexString(i4 >>> 3));
+
+        // 5e
+        int i5 = 0b11010011;
+        System.out.println(i5 << 5);
+
+        System.out.println(Integer.toHexString(0x7ffffff6+13));
+
+        int i;
+        short s = 4;
+        float f = 2.3f;
+
+        i = s;
+        //s = i;    not without casting
+        s = (short) Integer.MAX_VALUE;
+        //i = f;    not without casting
+        f = i;
+        i = (int) s;
+        System.out.println(s);
     }
 }
