@@ -6,10 +6,9 @@ package ch.fhnw.algd1.attestation1;
 public class Attestation1 {
     public static void main(String[] args) {
         int i = 97;
-        byte bi = i;
-        char c = i;
+        //byte bi = i;   won'twork
+        //char c = i;    won't work
         char c = '\n';
-        int i = Integer.MAX_VALUE;
         byte bi = (byte) 255;
         long l = i;
         boolean b = i > c;
