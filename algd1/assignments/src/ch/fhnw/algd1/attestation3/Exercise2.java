@@ -1,13 +1,12 @@
 package ch.fhnw.algd1.attestation3;
 
-import java.util.Arrays;
-
 /**
  * Created by Kelvin on 15-Apr-16.
  */
 public class Exercise2 {
     public static void main(String[] args) {}
 
+    // Exercise 2a
     public static double[] insertSort(double[] arr) {
         int n = arr.length;
 
@@ -15,7 +14,7 @@ public class Exercise2 {
             double x = arr[f];
             int e = f-1;
 
-            while (e >= 0 && arr[e] > x) {
+            while (e >= 0 && (arr[e] > x || Double.isNaN(arr[e]))) {
                 arr[e+1] = arr[e];
                 e--;
             }
@@ -24,6 +23,7 @@ public class Exercise2 {
         return arr;
     }
 
+    // Exercise 2b
     public static int binarySearch(double[] arr, double s) {
         int min = 0;
         int max = arr.length - 1;
@@ -32,9 +32,9 @@ public class Exercise2 {
             int p = min + max >>> 1;
             //int p = min + ((max - min)/2);
 
-            if (s < arr[p]) {
+            if (Double.compare(s, arr[p]) == -1) {
                 max = p-1;
-            } else if (s > arr[p]) {
+            } else if (Double.compare(s, arr[p]) == 1) {
                 min = p+1;
             } else {
                 return p;

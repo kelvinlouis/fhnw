@@ -1,9 +1,8 @@
 package ch.fhnw.algd1.attestation3;
-
-
 import static org.junit.Assert.*;
 
 /**
+ * Exercise 2c
  * Created by Kelvin on 15-Apr-16.
  */
 public class Exercise2Test {
@@ -25,8 +24,8 @@ public class Exercise2Test {
         double[] s4 = new double[]{ -0.0, 0.0 };
         assertArrayEquals(s4, Exercise2.insertSort(a4), 0.0);
 
-        double[] a5 = new double[]{ Double.NaN, 1.2, Double.POSITIVE_INFINITY, 2.3, 1.5, Double.NEGATIVE_INFINITY };
-        double[] s5 = new double[]{ Double.NaN, Double.NEGATIVE_INFINITY, 1.2, 1.5, 2.3, Double.POSITIVE_INFINITY };
+        double[] a5 = new double[]{ 1.2, Double.POSITIVE_INFINITY, 2.3, Double.NaN, 1.5, Double.NEGATIVE_INFINITY };
+        double[] s5 = new double[]{ Double.NEGATIVE_INFINITY, 1.2, 1.5, 2.3, Double.POSITIVE_INFINITY, Double.NaN };
         assertArrayEquals(s5, Exercise2.insertSort(a5), 0);
 
         double[] a6 = new double[]{ 1.2 };
@@ -63,5 +62,10 @@ public class Exercise2Test {
 
         double[] a5 = new double[]{};
         assertEquals(-1, Exercise2.binarySearch(a5, 2.2));
+
+        double[] a6 = new double[]{ 1.0, 1.1, Double.NaN };
+        assertEquals(0, Exercise2.binarySearch(a6, 1.0));
+        assertEquals(1, Exercise2.binarySearch(a6, 1.1));
+        assertEquals(2, Exercise2.binarySearch(a6, Double.NaN));
     }
 }

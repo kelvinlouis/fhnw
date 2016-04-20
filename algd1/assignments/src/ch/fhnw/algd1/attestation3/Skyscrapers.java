@@ -1,15 +1,8 @@
 package ch.fhnw.algd1.attestation3;
 
-/**
- * Created by Kelvin on 15-Apr-16.
- */
-
 public class Skyscrapers {
     /**
      * Simple algorithm to create n-n matrix as described in exercise 1a)
-     *
-     * @param n
-     * @return
      */
     public static int[][] generateSimpleMatrix(int n) {
         int[][] matrix = new int[n][n];
@@ -32,8 +25,6 @@ public class Skyscrapers {
     /**
      * Generates a new matrix including the counted skyscrapers per row and column,
      * as required in exercise 1b).
-     * @param m
-     * @return
      */
     public static int[][] countSkyscrapers(int[][] m) {
         int n = m.length;
