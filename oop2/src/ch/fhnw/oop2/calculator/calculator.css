@@ -1,0 +1,24 @@
+.button {
+    -fx-background-color: white;
+    -fx-font-size: 18;
+    -fx-border-color: lightgrey;
+}
+
+.button:hover {
+    -fx-background-color: lightblue;
+}
+
+.button:armed {
+    -fx-background-color: slateblue;
+}
+
+.label {
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-font-size: 40;
+    -fx-alignment: BASELINE_RIGHT;
+}
+
+.equal-button {
+    -fx-background-color: lightcoral;
+}
