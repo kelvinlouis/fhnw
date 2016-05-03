@@ -1,11 +1,13 @@
 package ch.fhnw.oop2.calculator;
 
 import ch.fhnw.oop2.calculator.operator.*;
+import javafx.scene.control.Label;
 
 /**
  * Created by Kelvin on 19-Apr-16.
  */
 public class Presenter {
+    private Label label; // CHANGE TODO
     private final Addition addition;
     private final Subtraction subtraction;
     private final Division division;

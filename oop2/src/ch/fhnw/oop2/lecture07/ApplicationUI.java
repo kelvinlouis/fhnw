@@ -1,4 +1,4 @@
-package ch.fhnw.oop2.lecture7;
+package ch.fhnw.oop2.lecture07;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.StringProperty;
