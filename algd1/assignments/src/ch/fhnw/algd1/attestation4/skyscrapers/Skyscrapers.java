@@ -1,94 +1,136 @@
 package ch.fhnw.algd1.attestation4.skyscrapers;
 
-import java.util.Arrays;
-
 /**
  * Created by Kelvin on 12-Jun-16.
  */
 public class Skyscrapers {
-    static int[][] solution = new int[4][4];
     static int[][] m;
+    static int n;
 
-    private static boolean solve(int[] v) {
-        for (int x = 0; x < 4; x++) {
-            int lc = 1;
-            int rc = 1;
+    public static void main(String[] args) {
+        m = createMatrix();
+        n = m.length-2;
 
-            int lb = m[x+1][0];
-            int rb = m[x+1][m.length-1];
-            int tb = m[0][x+1];
-            int bb = m[m.length-1][x+1];
+        // Creates all rows
+        fill(1, 1);
 
-            int lmax = v[0];
-            int rmax = v[3];
+        printMatrix(m);
+    }
 
-            for (int i = 1; i < 4; i++) {
-                int rev = (4 - 1) - i;
+    private static boolean fill(int row, int col) {
+        for (int i = 1; i <= n; i++) {
+            m[row][col] = i;
 
-                if (lmax < v[i]) {
-                    lmax = v[i];
-                    lc++;
+            if (isValid(row, col)) {
+                if (col < n) {
+                    if (fill(row, col + 1))
+                        return true;
+                } else {
+                    if (row < n) {
+                        if (fill(row + 1, 1))
+                            return true;
+                    } else {
+                        // DONE
+                        return true;
+                    }
                 }
-
-                if (rmax < v[rev]) {
-                    rmax = v[rev];
-                    rc++;
-                }
             }
+        }
+        return false;
+    }
 
-            if (lb == lc && rb == rc) {
-                System.out.println("Y(" + (x+1)  + "): " + Arrays.toString(v));
-                pushRowSolution(v, x);
-            }
+    private static boolean isValid(int row, int col) {
+        boolean validRow = isRowValid(row, col);
+        boolean validCol = isColValid(row, col);
 
-            if (tb == lc && bb == rc) {
-                System.out.println("X(" + (x+1) + "): " + Arrays.toString(v));
-                pushColumnSolution(v, x);
-            }
+        if (validRow && validCol) {
+            return isHeightsValid(row, col);
         }
 
         return false;
     }
 
-    private static void pushRowSolution(int[] v, int y) {
-        for (int i = 0; i< v.length; i++) {
-            if (solution[y][i] == 0 || solution[i][i] == v[i])
-                solution[y][i] = v[i];
+    private static boolean isRowValid(int row, int col) {
+        // Check dupes
+        for (int i=1; i<col; i++) {
+            if(m[row][i] == m[row][col])
+                return false;
         }
+
+        return true;
     }
 
-    private static void pushColumnSolution(int[] v, int x) {
-        for (int i = 0; i< v.length; i++) {
-            if (solution[i][x] == 0 || solution[i][x] == v[i])
-                solution[i][x] = v[i];
+    private static boolean isColValid(int row, int col) {
+        // Check dupes
+        for (int i=1; i<row; i++) {
+            if(m[i][col] == m[row][col])
+                return false;
         }
+
+        return true;
     }
 
-    private static void fill(int[] v, int d) {
-        if (d == v.length + 1) {
-            // Check if boundaries of row are correct
-            if (solve(v)) {
-                System.out.println("SOLVED:" + Arrays.toString(v));
+    private static boolean isHeightsValid(int row, int col) {
+        boolean validRowHeights = true;
+        boolean validColumnHeights = true;
+
+        if (col == n) {
+            validRowHeights = checkRowHeights(m[row][0], m[row][n+1], row);
+        }
+
+        if (row == n) {
+            validRowHeights = checkColHeights(m[0][col], m[n+1][col], col);
+        }
+
+        return validRowHeights && validColumnHeights;
+    }
+
+    private static boolean checkRowHeights(int fHeight, int lHeight, int row) {
+        int fMax = m[row][1];
+        int lMax = m[row][n];
+
+        int fc = 0;
+        int lc = 0;
+
+        for (int i = 2; i <= n; i++) {
+            int rev = n - i;
+
+            if (fMax < m[row][i]) {
+                fMax = m[row][i];
+                fc++;
             }
-            return;
-        }
-        for (int i = 0; i < v.length; i++) {
-            if (v[i] == 0) {
-                v[i] = d;
-                fill(v, d + 1);
-                v[i] = 0;
+
+            if (lMax < m[row][rev]) {
+                lMax = m[row][rev];
+                lc++;
             }
         }
+
+        return fc == fHeight && lc == lHeight;
     }
 
-    public static void main(String[] args) {
-        m = createMatrix();
-        //int n = m.length-2;
+    private static boolean checkColHeights(int fHeight, int lHeight, int col) {
+        int fMax = m[1][col];
+        int lMax = m[n][col];
 
-        // Creates all rows
-        fill(new int[4], 1);
+        int fc = 0;
+        int lc = 0;
 
-        printMatrix(solution);
+        for (int i = 2; i <= n; i++) {
+            int rev = n - i;
+
+            if (fMax < m[i][col]) {
+                fMax = m[i][col];
+                fc++;
+            }
+
+            if (lMax < m[rev][col]) {
+                lMax = m[rev][col];
+                lc++;
+            }
+        }
+
+        return fc == fHeight && lc == lHeight;
     }
 
     public static int[][] createMatrix() {

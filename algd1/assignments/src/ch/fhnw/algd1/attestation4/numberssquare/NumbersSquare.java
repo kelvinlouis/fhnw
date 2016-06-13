@@ -1,4 +1,4 @@
-package ch.fhnw.algd1.attestation4.skyscrapers;
+package ch.fhnw.algd1.attestation4.numberssquare;
 
 import java.util.Arrays;
 
