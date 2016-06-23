@@ -1,0 +1,44 @@
+.country {
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.7), 15, 0, 0, 0);
+    -fx-padding: 20;
+}
+
+.country-selector {
+    -fx-alignment: CENTER;
+    -fx-background-color: linear-gradient(to bottom, #ffcccc, #cc9999);
+    -fx-spacing: 20;
+}
+
+.country-poster {
+    -fx-spacing: 20;
+    -fx-background-color: linear-gradient(to bottom, pink, deeppink);
+}
+
+.country-poster-title {
+    -fx-font-size:  34;
+    -fx-text-fill: white;
+}
+
+.country-slider {
+    -fx-block-increment: 1;
+    -fx-major-tick-unit: 1;
+    -fx-minor-tick-count: 0;
+    -fx-show-tick-marks: true;
+    -fx-snap-to-ticks: true;
+}
+
+.country-slider .axis .axis-tick-mark {
+    -fx-stroke: black;
+}
+
+.country-form {
+    -fx-background-color: linear-gradient(to bottom, #c6e2ff, #99ccff);
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.country-header {
+    -fx-background-color: linear-gradient(to bottom, #ccffcc, #99fe99);
+    -fx-font-size: 20pt;
+    -fx-spacing: 20;
+}
