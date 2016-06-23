@@ -13,6 +13,8 @@ ip3bb/
 
 # Contains lecture documents of my modules
 */docs
+*/cards
+_admin/
 
 # Java
 bin/
