@@ -1,0 +1,16 @@
+#main {
+    -fx-background-color: red;
+}
+
+.layer {
+    -fx-background-color: blue;
+}
+
+#top-view {
+    -fx-background-color: cyan;
+}
+
+#bottom-view {
+
+}
+

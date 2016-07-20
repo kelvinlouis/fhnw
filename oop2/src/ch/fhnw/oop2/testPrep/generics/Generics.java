@@ -1,8 +1,19 @@
 package ch.fhnw.oop2.testPrep.generics;
 
-/**
- * Created by Kelvin on 04-Jul-16.
- */
+//                  +-----------------
+//                  | Kleidungstueck +-----+
+//              +---------------------     |
+//              |                          |
+//              |                          |
+//        +-----v----+                 +---v---+
+//        | Oberteil |                 | Schuh |
+//        +----------+                 +-------+
+//          |       |                      |
+//          |       |                      |
+//  +-------v--+   +v--------+      +------v-------+
+//  | Pullover |   |  Jacke  |      | Arbeitsschuh |
+//  +----------+   +---------+      +--------------+
+//
 public class Generics {
     public static void main(String[] args) {
         Schrank<Oberteil> schrank = new Schrank<>();
