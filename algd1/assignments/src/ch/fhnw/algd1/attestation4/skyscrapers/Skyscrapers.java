@@ -40,14 +40,7 @@ public class Skyscrapers {
     }
 
     private static boolean isValid(int row, int col) {
-        boolean validRow = isRowValid(row, col);
-        boolean validCol = isColValid(row, col);
-
-        if (validRow && validCol) {
-            return isHeightsValid(row, col);
-        }
-
-        return false;
+        return isRowValid(row, col) && isColValid(row, col) && isHeightsValid(row, col);
     }
 
     private static boolean isRowValid(int row, int col) {
@@ -93,7 +86,7 @@ public class Skyscrapers {
         int lc = 0;
 
         for (int i = 2; i <= n; i++) {
-            int rev = n - i;
+            int rev = n - i + 1;
 
             if (fMax < m[row][i]) {
                 fMax = m[row][i];
@@ -117,7 +110,7 @@ public class Skyscrapers {
         int lc = 0;
 
         for (int i = 2; i <= n; i++) {
-            int rev = n - i;
+            int rev = n - i + 1;
 
             if (fMax < m[i][col]) {
                 fMax = m[i][col];
