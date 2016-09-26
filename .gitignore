@@ -7,13 +7,15 @@ mgli/
 bsys/
 uuid/
 eprco/
+swc/
+syspr/
 
 ### Projects
 ip3bb/
 
 # Contains lecture documents of my modules
-*/docs
-*/cards
+*/**/docs
+*/**/cards
 _admin/
 
 # Java
