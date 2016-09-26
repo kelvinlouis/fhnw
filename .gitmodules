@@ -2,5 +2,5 @@
 	path = chp/assignments/3_2
 	url = git@github.com:GOATALU/4bit-alu.git
 [submodule "oop2/proj"]
-	path = oop2/proj
+	path = _archive/sem02/oop2/proj
 	url = git@github.com:kelvinlouis/fhnw-oop2-oscars.git
