@@ -1,0 +1,102 @@
+! Default Config
+enable
+conf t
+hostname Zurich-R1
+no ip domain-lookup
+enable secret class
+line con 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+service password-encryption
+banner motd # Unauthorized access prohibited! #
+exit
+clock set 12:20:00 9 Jan 2017
+conf t
+
+! configure ssh
+ip domain-name example.com
+username admin privilege 15 secret sshadmin
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+ip ssh time-out 75
+ip ssh authentication-retries 3
+
+! ipv4 gig setup
+int g0/0
+ip address 172.16.129.1 255.255.255.0
+description Luzern Subnetz
+no shut
+exit
+
+! ipv4 serial setup (NOT DCE)
+int s0/1/0
+ip address 172.16.133.6 255.255.255.252
+description Luzern-Zurich
+no shut
+exit
+
+! ipv4 serial setup (DCE)
+int s0/1/1
+ip address 172.16.133.1 255.255.255.252
+description Zurich-Bern
+clock rate 128000
+no shut
+exit
+
+int s0/1/0
+ip address 172.16.133.5 255.255.255.252
+description Zurich-Luzern
+clock rate 128000
+no shut
+exit
+
+!ipv4 virtual configuration
+int g0/0.10
+encapsulation dot1Q 10
+ip address 172.16.130.1 255.255.255.0
+no shut
+
+int g0/0.20
+encapsulation dot1Q 20
+ip address 172.16.131.1 255.255.255.0
+no shut
+
+int g0/0.30
+encapsulation dot1Q 30
+ip address 172.16.132.1 255.255.255.0
+no shut
+
+int g0/0
+no shut 
+exit
+
+! recursive static routing
+ip route 172.16.128.0 255.255.255.0 172.16.133.2
+ip route 172.16.129.0 255.255.255.0 172.16.133.6
+
+! remove static route
+no ip route 172.16.129.0 255.255.255.0 172.16.133.6
+
+! default route
+ip route 0.0.0.0 0.0.0.0 IP-ADDRESS
+
+! Bern
+ip route 172.16.129.0 255.255.255.0 172.16.133.1
+ip route 172.16.130.0 255.255.255.0 172.16.133.1
+ip route 172.16.131.0 255.255.255.0 172.16.133.1
+ip route 172.16.132.0 255.255.255.0 172.16.133.1
+
+! Lucerne
+ip route 172.16.128.0 255.255.255.0 172.16.133.5
+ip route 172.16.130.0 255.255.255.0 172.16.133.5
+ip route 172.16.131.0 255.255.255.0 172.16.133.5
+ip route 172.16.132.0 255.255.255.0 172.16.133.5

@@ -1,0 +1,94 @@
+! Default Config
+enable
+conf t
+hostname Zurich-S
+no ip domain-lookup
+enable secret class
+line con 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+service password-encryption
+banner motd # Unauthorized access prohibited! #
+exit
+clock set 12:20:00 9 Jan 2017
+conf t
+
+! configure ssh
+ip domain-name example.com
+username admin privilege 15 secret sshadmin
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+ip ssh time-out 75
+ip ssh authentication-retries
+
+! configure vlans
+vlan 10
+name Student
+vlan 20
+name Faculty
+vlan 30
+name something
+vlan 99
+name Management
+exit
+
+! remove vlan 10
+no vlan 10
+
+! assign port to vlan 10
+int f0/1
+switchport mode access
+switchport access vlan 10
+exit
+
+! assign multiple interfaces to vlan 10
+int range f0/11-24
+switchport mode access
+switchport access vlan 10
+exit
+
+! remove vlan from port
+int f0/24
+no switchport access vlan
+exit
+
+! turn-off ports
+int range f0/1-4
+shut
+int f0/2
+shut
+exit
+
+! move switch IP to management vlan
+int vlan 1
+no ip address
+int vlan 30
+ip address 172.16.132.2 255.255.255.240
+exit
+
+! trunk port
+int g0/1
+switchport mode trunk
+exit
+
+! turn of DTP Trunk Negotiation
+int g0/1
+switchport nonegotiate
+exit
+
+! enable port security
+int f0/5
+shut
+switchport port-security
+switchport port-security mac-address xxxx.xxxx.xxxx
+no shut
+exit

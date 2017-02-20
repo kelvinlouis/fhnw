@@ -1,0 +1,36 @@
+enable
+clock set 12:20:00 9 Jan 2017
+conf t
+hostname SW2
+no ip domain-lookup
+enable secret netlab24
+line con 0
+password fhnw24
+login
+exit
+line vty 0 4
+password fhnw24
+login
+exit
+service password-encryption
+banner motd # Unauthorized access prohibited! #
+
+ip domain-name example.com
+username admin privilege 15 secret fhnw24
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+ip ssh time-out 75
+ip ssh authentication-retries 3
+
+vlan 10
+name VLAN10
+
+vlan 20
+name VLAN20
+
+vlan 30
+name VLAN30

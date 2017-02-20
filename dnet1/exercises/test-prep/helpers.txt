@@ -1,0 +1,49 @@
+! Shows IPs of interfaces 
+do sh ip int brief
+
+! Shows IPV6 interfaces 
+do sh ipv6 int brief
+do sh ipv6 int
+
+! Use ping -6 on Windows for ipv6 pings
+ping -6 IPv6_ADDRESS
+
+! Use ping on Cisco
+ping IPv6_ADDRESS
+
+! Cisco: Get ipv6 ip
+ipv6config
+
+! Shows specific interface
+do sh int f0/5
+
+! Show trunks
+show interfaces trunk
+
+! Show configured VLANs
+do sh vlan
+
+! show port security
+do sh port-security
+do sh port-security int f0/5
+do sh port-security address
+
+! Save running config
+write
+! or
+copy run start
+
+!
+! Clean up
+
+! shows the files ... if vlan is stored
+show flash
+
+! delete vlan file
+delete vlan.dat
+
+! erase startup-config
+erase startup-config
+
+! Deletes running config -> loads startup config
+reload

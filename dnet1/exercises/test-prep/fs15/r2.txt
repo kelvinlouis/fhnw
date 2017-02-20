@@ -1,0 +1,67 @@
+enable
+clock set 12:20:00 9 Jan 2017
+conf t
+hostname R2
+no ip domain-lookup
+enable secret class
+line con 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+service password-encryption
+banner motd # Unauthorized access prohibited! #
+
+int s0/1/0
+ip address 192.168.4.2 255.255.255.252
+description R2 to R1
+clock rate 128000
+no shut
+exit
+
+int g0/0
+ip address 192.168.2.1 255.255.255.0
+description Subnet R2
+no shut
+exit
+
+int s0/1/1
+ip address 192.168.4.9 255.255.255.252
+description R2 to R3
+clock rate 128000
+no shut
+exit
+
+ip route 192.168.1.0 255.255.255.0 192.168.4.1
+ip route 192.168.3.0 255.255.255.0 192.168.4.10
+
+ipv6 unicast-routing
+
+int g0/0
+ipv6 address 2001:DB8:ACAD:2::1/64 eui-64
+description Subnet R2
+no shut
+exit
+
+int s0/1/0
+ipv6 address 2001:db8:acad:4::2/64
+description R2 to R1
+clock rate 128000
+no shut
+exit
+
+int s0/1/1
+ipv6 address 2001:db8:acad:6::1/64
+description R2 to R3
+clock rate 128000
+no shut
+exit
+
+ipv6 route 2001:db8:acad:1::/64 2001:db8:acad:4::1
+ipv6 route 2001:db8:acad:3::/64 2001:db8:acad:6::2
+
+end
+write

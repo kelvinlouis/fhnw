@@ -1,0 +1,58 @@
+enable
+clock set 12:20:00 9 Jan 2017
+conf t
+hostname R3
+no ip domain-lookup
+enable secret netlab24
+line con 0
+password fhnw24
+login
+exit
+line vty 0 4
+password fhnw24
+login
+exit
+service password-encryption
+banner motd # Unauthorized access prohibited! #
+
+ip domain-name example.com
+username admin privilege 15 secret fhnw24
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+ip ssh time-out 75
+ip ssh authentication-retries 3
+
+int g0/0
+ip address 10.10.8.65 255.255.255.248
+description R3 Subnet
+no shut
+exit
+
+int s0/1/1
+ip address 10.10.8.102 255.255.255.252
+description R3 to R2
+no shut
+exit
+
+int g0/0.10
+encapsulation dot1Q 10
+ip address 10.10.8.73 255.255.255.248
+no shut
+exit
+
+int g0/0.20
+encapsulation dot1Q 20
+ip address 10.10.8.81 255.255.255.248
+no shut
+exit
+
+int g0/0.99
+encapsulation dot1Q 99
+ip address 10.10.8.89 255.255.255.248
+no shut
+exit
+
