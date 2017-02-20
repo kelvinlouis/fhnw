@@ -30,8 +30,8 @@ hold
 ax = gca;
 ax.XAxisLocation = 'origin';
 ax.YAxisLocation = 'origin';
-xticks([-3*pi -2*pi -pi 0 pi 2*pi 3*pi])
-xticklabels({'-3\pi','-2\pi','-\pi','0','\pi','2\pi','3\pi'})
+xticks([-3*pi -2*pi -pi 0 pi 2*pi 3*pi]);
+xticklabels({'-3\pi','-2\pi','-\pi','0','\pi','2\pi','3\pi'});
 
 %ezplot(f1(t))
 %ezplot(f2_(t))
