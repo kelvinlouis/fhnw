@@ -82,7 +82,7 @@ void reverseArr(int arr[], int len)
   }
 }
 
-void moveArr(int arr[], int len, int moveBy)
+void moveArr(int *arr, int len, int moveBy)
 {
   int val = arr[0];
   int nextPos = (0 + moveBy) % len;
